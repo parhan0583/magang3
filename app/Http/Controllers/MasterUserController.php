@@ -57,9 +57,10 @@ class MasterUserController extends Controller
 
         public function getData()
         {
-        $dataTrainingRole = HrisDatadiriTraininguser::orderBy('name', 'asc')  // Mengurutkan berdasarkan NIK
-        ->orderBy('role', 'asc')  // Mengurutkan berdasarkan Role
-        ->get();
+           $dataTrainingRole = HrisDatadirisMasteruser::orderBy('nik', 'asc')
+            ->orderBy('name', 'asc')  // Mengurutkan berdasarkan NIK
+            ->orderBy('role', 'asc')  // Mengurutkan berdasarkan Role
+            ->get();
 
         return DataTables::of($dataTrainingRole)
         ->addIndexColumn() // Menambahkan kolom index
